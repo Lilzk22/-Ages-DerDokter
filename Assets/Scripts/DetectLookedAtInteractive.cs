@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Detects interactive elements the player is looking at
+/// </summary>
 public class DetectLookedAtInteractive : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Tooltip("Starting Point of Raycast")]
+    [SerializeField]
+    private Transform raycastOrigin;
 
-    // Update is called once per frame
-    void Update()
+    [Tooltip("how far from the the raycast we will serch for interative elemrnts")]
+    [SerializeField]
+    private float maxRange = 5.0f;
+
+    private void FixedUpdate()
     {
-        
+        Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, maxRange);
     }
 }
