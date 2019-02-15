@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
-   public void InteractWith()
-   {
-        throw new System
-   }
+  
 }
