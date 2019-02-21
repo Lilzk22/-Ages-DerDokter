@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Indoor Hospital.unity
+    guid: 19851b7b5fdb36348b275536b67f2df3
+  - enabled: 1
+    path: Assets/Scenes/Interactive object testing.unity
+    guid: 8bbcc78566e0e394da5b1e5dbaced7a3
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: b4844af4935593740b66069b8b9c3e4a
   m_configObjects: {}
