@@ -12,7 +12,7 @@ public class DetectLookedAtInteractive : MonoBehaviour
     [SerializeField]
     private Transform raycastOrigin;
 
-    [Tooltip("how far from the the raycast we will serch for interative elemrnts")]
+    [Tooltip("how far from the the raycast we will serch for interative elements")]
     [SerializeField]
     private float maxRange = 5.0f;
 
