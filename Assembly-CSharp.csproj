@@ -106,6 +106,7 @@
     <Compile Include="Assets\Flooded_Grounds\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\Flooded_Grounds\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\DetectLookedAtInteractive.cs" />
+    <Compile Include="Assets\Scripts\FlickeringLighs.cs" />
     <Compile Include="Assets\Scripts\Interactive Object.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IInteractive.cs" />
     <None Include="Assets\Flooded_Grounds\PostProcessing\Resources\Shaders\DepthOfField.shader" />
