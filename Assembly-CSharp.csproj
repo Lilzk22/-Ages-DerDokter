@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\Interactive Object.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IInteractive.cs" />
     <Compile Include="Assets\Scripts\LevelLoad.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <None Include="Assets\Flooded_Grounds\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\Flooded_Grounds\Content\Shaders\FG_PBR_Water.shader" />
     <None Include="Assets\Flooded_Grounds\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
