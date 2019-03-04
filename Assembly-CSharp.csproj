@@ -107,7 +107,8 @@
     <Compile Include="Assets\Flooded_Grounds\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\DetectLookedAtInteractive.cs" />
     <Compile Include="Assets\Scripts\FlickeringLighs.cs" />
-    <Compile Include="Assets\Scripts\Interactive Object.cs" />
+    <Compile Include="Assets\Scripts\InteractiveObject.cs" />
+    <Compile Include="Assets\Scripts\InteractWithLookedAt.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IInteractive.cs" />
     <Compile Include="Assets\Scripts\LevelLoad.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
