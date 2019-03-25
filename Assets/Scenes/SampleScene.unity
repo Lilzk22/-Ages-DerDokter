@@ -911,7 +911,6 @@ GameObject:
   - component: {fileID: 667329096}
   - component: {fileID: 667329095}
   - component: {fileID: 667329094}
-  - component: {fileID: 667329093}
   - component: {fileID: 667329092}
   m_Layer: 0
   m_Name: Key
@@ -934,19 +933,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayText: Take InventoryObjects
   objectName: InventoryObjects
---- !u!114 &667329093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667329091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f5f2d5e797f7f49ab108be54694cdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayText: InteractiveObject
 --- !u!82 &667329094
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2354,6 +2340,10 @@ PrefabInstance:
     - target: {fileID: 100006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_Name
       value: RigidBodyFPSController
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.859
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalPosition.x
