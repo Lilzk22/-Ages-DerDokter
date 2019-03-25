@@ -16,7 +16,7 @@ public class Door : InteractiveObject
     [SerializeField]
     private AudioClip openAudioClip;
 
-    //public override string DisplayText => isLocked ? lockedDisplayText : base.DisplayText;
+    
 
     public override string DisplayText
     {
@@ -55,7 +55,7 @@ public class Door : InteractiveObject
         {
             isLocked = true;
         }
-    }
+    } 
 
     public override void InteractWith()
     {

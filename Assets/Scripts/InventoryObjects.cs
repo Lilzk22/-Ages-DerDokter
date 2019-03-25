@@ -7,7 +7,7 @@ public class InventoryObjects : InteractiveObject
     [SerializeField]
     private string objectName = nameof(InventoryObjects);
 
-
+     
     [SerializeField]
     public string ObjectName => objectName;
 

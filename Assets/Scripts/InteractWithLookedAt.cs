@@ -6,7 +6,7 @@ using UnityEngine;
 /// Detects when player presses interact button while looking at Iinteractive
 /// </summary>
 public class InteractWithLookedAt : MonoBehaviour
-{
+{ 
     private IInteractive lookedAtInteractive;
     void Update()
     {
