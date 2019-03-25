@@ -41,5 +41,6 @@ public class LookedatInteractiveDisplayText : MonoBehaviour
     private void OnDisable()
     {
         DetectLookedAtInteractive.LookedAtInteractiveChanged -= OnLookedAtInteractiveChanged;
-    }         
+    }
 }
+

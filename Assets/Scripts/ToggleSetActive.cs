@@ -18,14 +18,15 @@ public class ToggleSetActive : InteractiveObject
     /// </summary>
     public override void InteractWith()
     {
-        if (isReusable)
+        if (isReusable || !hasBeenUsed)
         {
-           base.InteractWith();
+            base.InteractWith();
             objectToToggle.SetActive(objectToToggle.activeSelf);
             hasBeenUsed = true;
             if (!isReusable) displayText = string.Empty;
         }
 
     }
-   
+
 }
+

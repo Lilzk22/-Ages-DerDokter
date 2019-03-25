@@ -10,10 +10,10 @@ public class InteractWithLookedAt : MonoBehaviour
     private IInteractive lookedAtInteractive;
     void Update()
     {
-        if(Input.GetButtonDown("Interact") && lookedAtInteractive !=null)
+        if (Input.GetButtonDown("Interact") && lookedAtInteractive != null)
         {
             Debug.Log("Player Interacted");
-            lookedAtInteractive.InteractWith();           
+            lookedAtInteractive.InteractWith();
         }
     }
 

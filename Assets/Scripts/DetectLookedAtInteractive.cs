@@ -25,12 +25,12 @@ public class DetectLookedAtInteractive : MonoBehaviour
         private set
         {
             bool isInteractiveChanged = value != lookedAtInteractive;
-            if(isInteractiveChanged)
+            if (isInteractiveChanged)
             {
-                lookedAtInteractive = value;        
-                    LookedAtInteractiveChanged?.Invoke(lookedAtInteractive); 
+                lookedAtInteractive = value;
+                LookedAtInteractiveChanged?.Invoke(lookedAtInteractive);
             }
-        }    
+        }
     }
 
     private IInteractive lookedAtInteractive;
@@ -58,3 +58,4 @@ public class DetectLookedAtInteractive : MonoBehaviour
         return interactive;
     }
 }
+
