@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 6b2fbf0b2d868bd42a3a8dbc19cec654
   - enabled: 1
-    path: Assets/DreamBox.unity
+    path: Assets/Scenes/DreamBox.unity
     guid: 812749ed623cefd428e04ad5d99053d8
   - enabled: 1
-    path: Assets/Scenes/Indoor Hospital.unity
+    path: Assets/Scenes/Level 1 Indoors.unity
     guid: 19851b7b5fdb36348b275536b67f2df3
   - enabled: 1
     path: Assets/Scenes/OutDoors.unity
