@@ -7,6 +7,12 @@ public class InventoryObjects : InteractiveObject
     [SerializeField]
     private string objectName = nameof(InventoryObjects);
 
+    [SerializeField]
+    [TextArea(1,10)]
+    private string description;
+
+    [SerializeField]
+    private Sprite icon;
      
     [SerializeField]
     public string ObjectName => objectName;
