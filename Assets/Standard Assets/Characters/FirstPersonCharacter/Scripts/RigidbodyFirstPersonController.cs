@@ -20,6 +20,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
 
+           
+
 #if !MOBILE_INPUT
             private bool m_Running;
 #endif
@@ -72,8 +74,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float stickToGroundHelperDistance = 0.5f; // stops the character
             public float slowDownRate = 20f; // rate at which the controller comes to a stop when there is no input
             public bool airControl; // can the user control the direction that is being moved in the air
-            [Tooltip("set it to 0.1 or more if you get stuck in wall")]
-            public float shellOffset; //reduce the radius by that ratio to avoid getting stuck in wall (a value of 0.1f is nice)
         }
 
 
@@ -197,9 +197,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void StickToGroundHelper()
         {
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
+            if (Physics.SphereCast(transform.position, m_Capsule.radius, Vector3.down, out hitInfo,
                                    ((m_Capsule.height/2f) - m_Capsule.radius) +
-                                   advancedSettings.stickToGroundHelperDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                                   advancedSettings.stickToGroundHelperDistance))
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
                 {
@@ -240,13 +240,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+
         /// sphere cast down just beyond the bottom of the capsule to see if the capsule is colliding round the bottom
         private void GroundCheck()
         {
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height/2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+            if (Physics.SphereCast(transform.position, m_Capsule.radius, Vector3.down, out hitInfo,
+                                   ((m_Capsule.height/2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance))
             {
                 m_IsGrounded = true;
                 m_GroundContactNormal = hitInfo.normal;

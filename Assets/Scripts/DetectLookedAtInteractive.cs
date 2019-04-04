@@ -8,7 +8,7 @@ using UnityEngine;
 /// Detects interactive elements the player is looking at
 /// </summary>
 public class DetectLookedAtInteractive : MonoBehaviour
-{
+{ 
     [Tooltip("Starting Point of Raycast")]
     [SerializeField]
     private Transform raycastOrigin;
