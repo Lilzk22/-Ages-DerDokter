@@ -1,13 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class InventoryMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject inventoryMenuItemTogglePrefab;
+
+    [SerializeField]
+    private Transform inventoryListContentArea;
+
+    [SerializeField]
+    private Text itemLabelText;
+
+    [SerializeField]
+    private Text descriptionAreaText;
+
+
     public static InventoryMenu instance;
     private CanvasGroup canvasGroup;
     private RigidbodyFirstPersonController rigidbodyFirstPersonController;
+    private AudioSource audioSource;
 
     public static InventoryMenu Instance
     {
@@ -22,6 +37,20 @@ public class InventoryMenu : MonoBehaviour
 
     private bool IsVisible => canvasGroup.alpha > 0;
 
+    public void ExitMenuButtonClick()
+    {
+        HideMenu();
+    }
+
+    /// <summary>
+    /// New inventory menu toggle prefabs and adds to menu
+    /// </summary>
+    public void AddItemToMenu(InventoryObjects inventoryObjectToAdd)
+    {
+        GameObject clone = Instantiate(inventoryMenuItemTogglePrefab,inventoryListContentArea);
+        InventoryMenuItemToggle toggle = clone.GetComponent<InventoryMenuItemToggle>();
+        toggle.AssociatedInventoryObject = inventoryObjectToAdd;
+    }
     private void ShowMenu()
     {
         canvasGroup.alpha = 1;
@@ -29,6 +58,7 @@ public class InventoryMenu : MonoBehaviour
         rigidbodyFirstPersonController.enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        audioSource.Play();
     }
 
     private void HideMenu()
@@ -38,6 +68,22 @@ public class InventoryMenu : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         rigidbodyFirstPersonController.enabled = true;
+        audioSource.Play();
+    }
+    private void OnInventoryMenuItemSelected(InventoryObjects inventoryObjectThatWasSelected)
+    {
+        itemLabelText.text = inventoryObjectThatWasSelected.ObjectName;
+        descriptionAreaText.text = inventoryObjectThatWasSelected.Description;
+    }
+
+    private void OnEnable()
+    {
+        InventoryMenuItemToggle.InventoryMenuItemSelected += OnInventoryMenuItemSelected;
+    }
+
+    private void OnDisable()
+    {
+        InventoryMenuItemToggle.InventoryMenuItemSelected -= OnInventoryMenuItemSelected;
     }
 
     private void Update()
@@ -64,9 +110,20 @@ public class InventoryMenu : MonoBehaviour
 
         canvasGroup = GetComponent<CanvasGroup>();
         rigidbodyFirstPersonController = FindObjectOfType<RigidbodyFirstPersonController>();
+        audioSource = GetComponent<AudioSource>();
+        
     }
     private void Start()
     {
         HideMenu();
+        StartCoroutine(WaitForAudioClip());
+    }
+
+    private IEnumerator WaitForAudioClip()
+    {
+        float originalVolume = audioSource.volume;
+        audioSource.volume = 0;
+        yield return new WaitForSeconds(audioSource.clip.length);
+        audioSource.volume = originalVolume;
     }
 }
