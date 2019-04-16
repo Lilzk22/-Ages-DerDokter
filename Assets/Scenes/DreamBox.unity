@@ -4732,6 +4732,10 @@ PrefabInstance:
       propertyPath: movementSettings.RunMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1725388841, guid: 8c580417bc8dc424aa6e222bb663917e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c580417bc8dc424aa6e222bb663917e, type: 3}
 --- !u!1 &706026689
