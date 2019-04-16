@@ -11,11 +11,6 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void ButtonCredit()
-    {
-        SceneManager.LoadScene(2);
-    }
-
     public void ButtonQuit()
     {
         Application.Quit();
