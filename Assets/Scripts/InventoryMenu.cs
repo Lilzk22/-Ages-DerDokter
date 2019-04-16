@@ -18,12 +18,11 @@ public class InventoryMenu : MonoBehaviour
     [SerializeField]
     private Text descriptionAreaText;
 
-
     public static InventoryMenu instance;
     private CanvasGroup canvasGroup;
     private RigidbodyFirstPersonController rigidbodyFirstPersonController;
     private AudioSource audioSource;
-
+    
     public static InventoryMenu Instance
     {
         get
@@ -60,7 +59,6 @@ public class InventoryMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         audioSource.Play();
     }
-
     private void HideMenu()
     {
         canvasGroup.alpha = 0;
@@ -70,6 +68,7 @@ public class InventoryMenu : MonoBehaviour
         rigidbodyFirstPersonController.enabled = true;
         audioSource.Play();
     }
+
     private void OnInventoryMenuItemSelected(InventoryObjects inventoryObjectThatWasSelected)
     {
         itemLabelText.text = inventoryObjectThatWasSelected.ObjectName;
@@ -80,7 +79,6 @@ public class InventoryMenu : MonoBehaviour
     {
         InventoryMenuItemToggle.InventoryMenuItemSelected += OnInventoryMenuItemSelected;
     }
-
     private void OnDisable()
     {
         InventoryMenuItemToggle.InventoryMenuItemSelected -= OnInventoryMenuItemSelected;
@@ -89,7 +87,6 @@ public class InventoryMenu : MonoBehaviour
     private void Update()
     {
         HandleInput();
-
     }
 
     private void HandleInput()
