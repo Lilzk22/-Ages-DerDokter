@@ -9,10 +9,6 @@ public class ToggleSetActive : InteractiveObject
     private GameObject objectToToggle;
     [SerializeField]
     private GameObject objectToToggle1;
-    [SerializeField]
-    private GameObject objectToToggle2;
-    [SerializeField]
-    private GameObject objectToToggle3;
 
     [SerializeField]
     private bool isReusable = true;
