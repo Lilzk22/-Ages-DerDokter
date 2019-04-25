@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/DreamBox.unity
     guid: 812749ed623cefd428e04ad5d99053d8
   - enabled: 1
-    path: Assets/Scenes/HospitalIndoors.unity
+    path: Assets/Scenes/Indoors without power.unity
     guid: 19851b7b5fdb36348b275536b67f2df3
   - enabled: 1
     path: Assets/Scenes/OutDoors.unity
     guid: 1c8405d9b90f1734f85ebe8748ff6795
+  - enabled: 1
+    path: Assets/Scenes/Indoors with Power.unity
+    guid: 66e67dc47b5bf8849a5692d1b5dbc711
   m_configObjects: {}

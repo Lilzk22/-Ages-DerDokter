@@ -13,9 +13,10 @@ public class InventoryObjects : InteractiveObject
 
     [SerializeField]
     private Sprite icon;
-     
-    [SerializeField]
+
+    public Sprite Icon => icon;
     public string ObjectName => objectName;
+    public string Description => description;
 
     private new Renderer renderer;
     private new Collider collider;
@@ -35,6 +36,7 @@ public class InventoryObjects : InteractiveObject
     {
         base.InteractWith();
         PlayerInventory.InventoryObjects.Add(this);
+        InventoryMenu.Instance.AddItemToMenu(this);
         renderer.enabled = false;
         collider.enabled = false;
 
