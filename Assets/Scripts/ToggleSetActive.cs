@@ -9,10 +9,11 @@ public class ToggleSetActive : InteractiveObject
     private GameObject objectToToggle;
     [SerializeField]
     private GameObject objectToToggle1;
+    [SerializeField]
+    private GameObject objectToToggle2;
 
     [SerializeField]
     private bool isReusable = true;
-
     private bool hasBeenUsed = false;
 
     /// <summary>
@@ -24,14 +25,11 @@ public class ToggleSetActive : InteractiveObject
         {
             base.InteractWith();
             objectToToggle.SetActive(!objectToToggle.activeSelf);
-            //objectToToggle1.SetActive(!objectToToggle.activeSelf);
-            //objectToToggle2.SetActive(!objectToToggle.activeSelf);
-            //objectToToggle3.SetActive(!objectToToggle.activeSelf);
+            objectToToggle1.SetActive(!objectToToggle.activeSelf);
+            objectToToggle2.SetActive(!objectToToggle.activeSelf);
             hasBeenUsed = true;
             if (!isReusable) displayText = string.Empty;
         }
-
     }
-
 }
 

@@ -8,6 +8,6 @@ public class RotatingObjects : MonoBehaviour
 
     void Update()
     {
-        gearOne.transform.Rotate(0, 1, 0);
+        gearOne.transform.Rotate(0, 0, 1);
     }
 }
