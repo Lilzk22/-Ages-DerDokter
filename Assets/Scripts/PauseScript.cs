@@ -11,6 +11,11 @@ public class PauseScript : MonoBehaviour
 
     private RigidbodyFirstPersonController rigidbodyFirstPersonController;
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))

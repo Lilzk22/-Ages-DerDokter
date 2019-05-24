@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Indoors with Power.unity
     guid: 66e67dc47b5bf8849a5692d1b5dbc711
+  - enabled: 1
+    path: Assets/Scenes/TheEnd.unity
+    guid: 43a8076f2517a4d46ae73b50fa7e11f1
   m_configObjects: {}
