@@ -8,7 +8,11 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField]
     string firstLevelName;
-
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     public void ButtonStart()
     {
         //SceneManager.LoadScene(1);
