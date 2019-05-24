@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace DigitalRuby.RainMaker
 {
@@ -28,6 +29,9 @@ namespace DigitalRuby.RainMaker
 
         [Tooltip("Heavy rain looping clip")]
         public AudioClip RainSoundHeavy;
+
+        [Tooltip("AudoMixer used for the rain sound")]
+        public AudioMixerGroup RainSoundAudioMixer;
 
         [Tooltip("Intensity of rain (0-1)")]
         [Range(0.0f, 1.0f)]
@@ -225,10 +229,10 @@ namespace DigitalRuby.RainMaker
                 Camera = Camera.main;
             }
 
-            audioSourceRainLight = new LoopingAudioSource(this, RainSoundLight);
-            audioSourceRainMedium = new LoopingAudioSource(this, RainSoundMedium);
-            audioSourceRainHeavy = new LoopingAudioSource(this, RainSoundHeavy);
-            audioSourceWind = new LoopingAudioSource(this, WindSound);
+            audioSourceRainLight = new LoopingAudioSource(this, RainSoundLight, RainSoundAudioMixer);
+            audioSourceRainMedium = new LoopingAudioSource(this, RainSoundMedium, RainSoundAudioMixer);
+            audioSourceRainHeavy = new LoopingAudioSource(this, RainSoundHeavy, RainSoundAudioMixer);
+            audioSourceWind = new LoopingAudioSource(this, WindSound, RainSoundAudioMixer);
 
             if (RainFallParticleSystem != null)
             {
@@ -315,9 +319,15 @@ namespace DigitalRuby.RainMaker
         public AudioSource AudioSource { get; private set; }
         public float TargetVolume { get; private set; }
 
-        public LoopingAudioSource(MonoBehaviour script, AudioClip clip)
+        public LoopingAudioSource(MonoBehaviour script, AudioClip clip, AudioMixerGroup mixer)
         {
             AudioSource = script.gameObject.AddComponent<AudioSource>();
+
+            if (mixer != null)
+            {
+                AudioSource.outputAudioMixerGroup = mixer;
+            }
+
             AudioSource.loop = true;
             AudioSource.clip = clip;
             AudioSource.playOnAwake = false;
@@ -349,5 +359,4 @@ namespace DigitalRuby.RainMaker
             }
         }
     }
-
 }

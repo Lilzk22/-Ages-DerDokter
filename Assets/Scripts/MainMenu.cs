@@ -9,9 +9,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     string firstLevelName;
 
-    public void ButtonStart()
+    public void StartGameButtonClicked()
     {
-        //SceneManager.LoadScene(1);
         LoadingScene.LoadNewScene(firstLevelName);
     }
 

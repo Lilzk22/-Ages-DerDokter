@@ -9,15 +9,17 @@ public class LoadingScene : MonoBehaviour
     [SerializeField]
     Slider progressSlider;
 
-    const string loadingSceneName = "DreamBox";
+    [SerializeField]
+    private string loadLevel;
 
+    const string loadingSceneName = "LoadingScene";
     private static string sceneToLoad;
 
-     void Start()
-     {
+    void Start()
+    {
         progressSlider.value = 0;
         StartCoroutine(BeginLoading());
-     }
+    }
 
     public static void LoadNewScene(string sceneToLoad)
     {
@@ -28,7 +30,7 @@ public class LoadingScene : MonoBehaviour
     private IEnumerator BeginLoading()
     {
         yield return new WaitForSeconds(1f);
-       AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
 
         while (!async.isDone)
         {

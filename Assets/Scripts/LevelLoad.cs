@@ -7,6 +7,7 @@ public class LevelLoad : MonoBehaviour
 {
     [SerializeField]
     private string loadLevel;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
