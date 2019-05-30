@@ -2058,6 +2058,11 @@ PrefabInstance:
       propertyPath: loadLevel
       value: OutDoors
       objectReference: {fileID: 0}
+    - target: {fileID: 3603160122648228667, guid: 536c0cdf57a381a4aa480daddea0abc2,
+        type: 3}
+      propertyPath: firstLevelName
+      value: OutDoors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 536c0cdf57a381a4aa480daddea0abc2, type: 3}
 --- !u!4 &361302807 stripped
@@ -8450,7 +8455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f798f510897ef9b44b6528b6f9582346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadLevel: OutDoors
+  firstLevelName: 
 --- !u!64 &1132513423
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10624,7 +10629,7 @@ PrefabInstance:
     - target: {fileID: 6920194451272062969, guid: ff38257d4567f1e41ad4be9873cf6ad4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000038019258
+      value: -0.0000017957242
       objectReference: {fileID: 0}
     - target: {fileID: 6920194451642013272, guid: ff38257d4567f1e41ad4be9873cf6ad4,
         type: 3}
@@ -10734,7 +10739,7 @@ PrefabInstance:
     - target: {fileID: 6920194451933495586, guid: ff38257d4567f1e41ad4be9873cf6ad4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00001958408
+      value: 0.00003305894
       objectReference: {fileID: 0}
     - target: {fileID: 6920194451226415054, guid: ff38257d4567f1e41ad4be9873cf6ad4,
         type: 3}

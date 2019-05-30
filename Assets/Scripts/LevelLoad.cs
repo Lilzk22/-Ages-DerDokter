@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class LevelLoad : MonoBehaviour
 {
     [SerializeField]
-    private string loadLevel;
+    string firstLevelName;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(loadLevel);
+            LoadingScene.LoadNewScene(firstLevelName);
         }
     }
 }
